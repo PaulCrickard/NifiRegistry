@@ -2,5 +2,7 @@ flows:
   7aa48258-ce5c-44d8-ae7a-6e67d9dbaa4c: {ver: 3, file: SCf.snapshot, comments: Added
       a third warehouse, author: anonymous, created: 1589581513944, flowName: SCf,
     flowDesc: 'Chapter 6: SeeClickFix API to Elasticsearch'}
+  af871a10-c3a0-4a82-80c8-3f56c657a9d1: {ver: 1, file: CSV.snapshot, comments: First,
+    author: anonymous, created: 1589817507107, flowName: CSV, flowDesc: CSV Processors}
 layoutVer: 1
 bucketId: c8e69fca-7f08-44a1-967c-32a1a5709404
