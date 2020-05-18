@@ -741,7 +741,18 @@
         "funnels" : [ ],
         "identifier" : "7494a9a2-a408-3744-9405-701db87baf10",
         "inputPorts" : [ ],
-        "labels" : [ ],
+        "labels" : [ {
+          "componentType" : "LABEL",
+          "groupIdentifier" : "7494a9a2-a408-3744-9405-701db87baf10",
+          "height" : 148.0,
+          "identifier" : "f91ccc78-fa26-3378-8369-beabee177e1a",
+          "position" : {
+            "x" : -4.688835838042905,
+            "y" : 206.7882612231556
+          },
+          "style" : { },
+          "width" : 148.0
+        } ],
         "name" : "Clean",
         "outputPorts" : [ ],
         "position" : {
@@ -1137,8 +1148,8 @@
           "name" : "SplitRecord",
           "penaltyDuration" : "30 sec",
           "position" : {
-            "x" : -344.0,
-            "y" : 368.0
+            "x" : 184.0,
+            "y" : 208.0
           },
           "properties" : {
             "Record Writer" : "1bede17f-21a5-3242-9ccf-9006969190fd",
