@@ -4,6 +4,9 @@ flows:
   7aa48258-ce5c-44d8-ae7a-6e67d9dbaa4c: {ver: 4, file: SCf.snapshot, comments: changes,
     author: anonymous, created: 1590957313546, flowName: SCf, flowDesc: 'Chapter 6:
       SeeClickFix API to Elasticsearch'}
+  40aa38eb-455c-4a49-95ce-c50231cd997f: {ver: 1, file: postgreSQLtoElasticsearch.snapshot,
+    comments: '', author: anonymous, created: 1590957623642, flowName: postgreSQLtoElasticsearch,
+    flowDesc: Testing Dev to Prod}
   af871a10-c3a0-4a82-80c8-3f56c657a9d1: {ver: 1, file: CSV.snapshot, comments: First,
     author: anonymous, created: 1589817507107, flowName: CSV, flowDesc: CSV Processors}
 layoutVer: 1
