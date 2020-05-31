@@ -531,7 +531,7 @@
             "put-es-type" : "doc",
             "put-es-index" : "${index}",
             "elasticsearch-http-url" : "${elastic}",
-            "put-es-batch-size" : "100",
+            "put-es-batch-size" : "1000",
             "elasticsearch-http-connect-timeout" : "5 secs",
             "put-es-index-op" : "index",
             "Character Set" : "UTF-8"
