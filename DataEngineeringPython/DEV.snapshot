@@ -189,6 +189,65 @@
           "style" : { },
           "type" : "org.apache.nifi.processors.standard.FetchFTP",
           "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.3"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "06e9a2ed-88d1-3895-ae23-55e5b04a1c5a",
+          "identifier" : "2eca1ef8-e469-3823-a943-ace73caa51ef",
+          "name" : "CompressContent",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 1644.5,
+            "y" : 730.0
+          },
+          "properties" : {
+            "Compression Format" : "use mime.type attribute",
+            "Mode" : "compress",
+            "Compression Level" : "1",
+            "Update Filename" : "false"
+          },
+          "propertyDescriptors" : {
+            "Compression Format" : {
+              "displayName" : "Compression Format",
+              "identifiesControllerService" : false,
+              "name" : "Compression Format",
+              "sensitive" : false
+            },
+            "Mode" : {
+              "displayName" : "Mode",
+              "identifiesControllerService" : false,
+              "name" : "Mode",
+              "sensitive" : false
+            },
+            "Compression Level" : {
+              "displayName" : "Compression Level",
+              "identifiesControllerService" : false,
+              "name" : "Compression Level",
+              "sensitive" : false
+            },
+            "Update Filename" : {
+              "displayName" : "Update Filename",
+              "identifiesControllerService" : false,
+              "name" : "Update Filename",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.CompressContent",
+          "yieldDuration" : "1 sec"
         } ],
         "remoteProcessGroups" : [ ],
         "variables" : { }
