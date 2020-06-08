@@ -71,6 +71,135 @@
         } ],
         "controllerServices" : [ {
           "bundle" : {
+            "artifact" : "nifi-record-serialization-services-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.3"
+          },
+          "comments" : "",
+          "componentType" : "CONTROLLER_SERVICE",
+          "controllerServiceApis" : [ {
+            "bundle" : {
+              "artifact" : "nifi-standard-services-api-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.11.3"
+            },
+            "type" : "org.apache.nifi.serialization.RecordSetWriterFactory"
+          } ],
+          "groupIdentifier" : "af5f7eac-7878-33ac-8d74-6e8ea42730d8",
+          "identifier" : "83e3f72b-bc75-3d8a-a4f9-c2c5a0e35720",
+          "name" : "JsonRecordSetWriter",
+          "properties" : {
+            "compression-level" : "1",
+            "Pretty Print JSON" : "false",
+            "compression-format" : "none",
+            "Schema Write Strategy" : "no-schema",
+            "suppress-nulls" : "never-suppress",
+            "output-grouping" : "output-oneline",
+            "schema-name" : "${schema.name}",
+            "schema-access-strategy" : "inherit-record-schema",
+            "schema-text" : "${avro.schema}"
+          },
+          "propertyDescriptors" : {
+            "schema-branch" : {
+              "displayName" : "Schema Branch",
+              "identifiesControllerService" : false,
+              "name" : "schema-branch",
+              "sensitive" : false
+            },
+            "compression-level" : {
+              "displayName" : "Compression Level",
+              "identifiesControllerService" : false,
+              "name" : "compression-level",
+              "sensitive" : false
+            },
+            "schema-cache" : {
+              "displayName" : "Schema Cache",
+              "identifiesControllerService" : true,
+              "name" : "schema-cache",
+              "sensitive" : false
+            },
+            "Timestamp Format" : {
+              "displayName" : "Timestamp Format",
+              "identifiesControllerService" : false,
+              "name" : "Timestamp Format",
+              "sensitive" : false
+            },
+            "Date Format" : {
+              "displayName" : "Date Format",
+              "identifiesControllerService" : false,
+              "name" : "Date Format",
+              "sensitive" : false
+            },
+            "Pretty Print JSON" : {
+              "displayName" : "Pretty Print JSON",
+              "identifiesControllerService" : false,
+              "name" : "Pretty Print JSON",
+              "sensitive" : false
+            },
+            "compression-format" : {
+              "displayName" : "Compression Format",
+              "identifiesControllerService" : false,
+              "name" : "compression-format",
+              "sensitive" : false
+            },
+            "Schema Write Strategy" : {
+              "displayName" : "Schema Write Strategy",
+              "identifiesControllerService" : false,
+              "name" : "Schema Write Strategy",
+              "sensitive" : false
+            },
+            "suppress-nulls" : {
+              "displayName" : "Suppress Null Values",
+              "identifiesControllerService" : false,
+              "name" : "suppress-nulls",
+              "sensitive" : false
+            },
+            "output-grouping" : {
+              "displayName" : "Output Grouping",
+              "identifiesControllerService" : false,
+              "name" : "output-grouping",
+              "sensitive" : false
+            },
+            "schema-name" : {
+              "displayName" : "Schema Name",
+              "identifiesControllerService" : false,
+              "name" : "schema-name",
+              "sensitive" : false
+            },
+            "schema-registry" : {
+              "displayName" : "Schema Registry",
+              "identifiesControllerService" : true,
+              "name" : "schema-registry",
+              "sensitive" : false
+            },
+            "Time Format" : {
+              "displayName" : "Time Format",
+              "identifiesControllerService" : false,
+              "name" : "Time Format",
+              "sensitive" : false
+            },
+            "schema-access-strategy" : {
+              "displayName" : "Schema Access Strategy",
+              "identifiesControllerService" : false,
+              "name" : "schema-access-strategy",
+              "sensitive" : false
+            },
+            "schema-version" : {
+              "displayName" : "Schema Version",
+              "identifiesControllerService" : false,
+              "name" : "schema-version",
+              "sensitive" : false
+            },
+            "schema-text" : {
+              "displayName" : "Schema Text",
+              "identifiesControllerService" : false,
+              "name" : "schema-text",
+              "sensitive" : false
+            }
+          },
+          "type" : "org.apache.nifi.json.JsonRecordSetWriter"
+        }, {
+          "bundle" : {
             "artifact" : "nifi-dbcp-service-nar",
             "group" : "org.apache.nifi",
             "version" : "1.11.3"
@@ -221,7 +350,7 @@
         },
         "processGroups" : [ ],
         "processors" : [ {
-          "autoTerminatedRelationships" : [ "failure", "retry" ],
+          "autoTerminatedRelationships" : [ "success", "failure", "retry" ],
           "bulletinLevel" : "WARN",
           "bundle" : {
             "artifact" : "nifi-standard-nar",
@@ -242,7 +371,7 @@
           },
           "properties" : {
             "Support Fragmented Transactions" : "true",
-            "putsql-sql-statement" : "INSERT INTO ${table} VALUES ('${userid}', '${name}',${age},'${street}','${city}','${state}','${zip}');",
+            "putsql-sql-statement" : "INSERT INTO ${warehouse} VALUES ('${userid}', '${name}',${age},'${street}','${city}','${state}','${zip}');",
             "Batch Size" : "100",
             "Obtain Generated Keys" : "false",
             "JDBC Connection Pool" : "104fb4f7-31b8-3f9f-96a8-2a5d67cc5f93",
@@ -307,7 +436,7 @@
           "type" : "org.apache.nifi.processors.standard.PutSQL",
           "yieldDuration" : "1 sec"
         }, {
-          "autoTerminatedRelationships" : [ ],
+          "autoTerminatedRelationships" : [ "failure" ],
           "bulletinLevel" : "WARN",
           "bundle" : {
             "artifact" : "nifi-standard-nar",
@@ -330,7 +459,8 @@
             "esql-max-rows" : "0",
             "esql-output-batch-size" : "0",
             "esql-fetch-size" : "0",
-            "SQL select query" : "select * from staging",
+            "SQL select query" : "select * from ${table}",
+            "esqlrecord-record-writer" : "83e3f72b-bc75-3d8a-a4f9-c2c5a0e35720",
             "Max Wait Time" : "0 seconds",
             "Database Connection Pooling Service" : "104fb4f7-31b8-3f9f-96a8-2a5d67cc5f93",
             "dbf-user-logical-types" : "false",
@@ -413,7 +543,10 @@
           "yieldDuration" : "1 sec"
         } ],
         "remoteProcessGroups" : [ ],
-        "variables" : { }
+        "variables" : {
+          "warehouse" : "warehouse",
+          "table" : "staging"
+        }
       },
       "flowEncodingVersion" : "1.0",
       "parameterContexts" : { }
