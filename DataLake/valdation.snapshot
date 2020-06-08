@@ -46,36 +46,6 @@
           "destination" : {
             "comments" : "",
             "groupId" : "392a7c98-98e8-3b72-8c13-10c4ec280279",
-            "id" : "34e15e5a-09e0-3db0-901b-c7bdbc25284b",
-            "name" : "PassedValidation",
-            "type" : "OUTPUT_PORT"
-          },
-          "flowFileExpiration" : "0 sec",
-          "groupIdentifier" : "392a7c98-98e8-3b72-8c13-10c4ec280279",
-          "identifier" : "eee0cb83-47a5-3792-8343-b9c6cf748628",
-          "labelIndex" : 1,
-          "loadBalanceCompression" : "DO_NOT_COMPRESS",
-          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-          "name" : "",
-          "partitioningAttribute" : "",
-          "prioritizers" : [ ],
-          "selectedRelationships" : [ "success" ],
-          "source" : {
-            "comments" : "",
-            "groupId" : "392a7c98-98e8-3b72-8c13-10c4ec280279",
-            "id" : "374c9a21-503f-3709-bd8e-d840b9f4fcad",
-            "name" : "Passed",
-            "type" : "PROCESSOR"
-          },
-          "zIndex" : 0
-        }, {
-          "backPressureDataSizeThreshold" : "1 GB",
-          "backPressureObjectThreshold" : 10000,
-          "bends" : [ ],
-          "componentType" : "CONNECTION",
-          "destination" : {
-            "comments" : "",
-            "groupId" : "392a7c98-98e8-3b72-8c13-10c4ec280279",
             "id" : "63fdc6bc-160c-3873-9a53-3c6b7d64048c",
             "name" : "Validate People",
             "type" : "PROCESSOR"
@@ -166,9 +136,9 @@
           "destination" : {
             "comments" : "",
             "groupId" : "392a7c98-98e8-3b72-8c13-10c4ec280279",
-            "id" : "374c9a21-503f-3709-bd8e-d840b9f4fcad",
-            "name" : "Passed",
-            "type" : "PROCESSOR"
+            "id" : "34e15e5a-09e0-3db0-901b-c7bdbc25284b",
+            "name" : "PassedValidation",
+            "type" : "OUTPUT_PORT"
           },
           "flowFileExpiration" : "0 sec",
           "groupIdentifier" : "392a7c98-98e8-3b72-8c13-10c4ec280279",
@@ -450,87 +420,6 @@
           "position" : {
             "x" : -7464.0,
             "y" : 1120.0
-          },
-          "properties" : {
-            "Create Missing Directories" : "true",
-            "Conflict Resolution Strategy" : "fail"
-          },
-          "propertyDescriptors" : {
-            "Group" : {
-              "displayName" : "Group",
-              "identifiesControllerService" : false,
-              "name" : "Group",
-              "sensitive" : false
-            },
-            "Owner" : {
-              "displayName" : "Owner",
-              "identifiesControllerService" : false,
-              "name" : "Owner",
-              "sensitive" : false
-            },
-            "Create Missing Directories" : {
-              "displayName" : "Create Missing Directories",
-              "identifiesControllerService" : false,
-              "name" : "Create Missing Directories",
-              "sensitive" : false
-            },
-            "Permissions" : {
-              "displayName" : "Permissions",
-              "identifiesControllerService" : false,
-              "name" : "Permissions",
-              "sensitive" : false
-            },
-            "Maximum File Count" : {
-              "displayName" : "Maximum File Count",
-              "identifiesControllerService" : false,
-              "name" : "Maximum File Count",
-              "sensitive" : false
-            },
-            "Last Modified Time" : {
-              "displayName" : "Last Modified Time",
-              "identifiesControllerService" : false,
-              "name" : "Last Modified Time",
-              "sensitive" : false
-            },
-            "Directory" : {
-              "displayName" : "Directory",
-              "identifiesControllerService" : false,
-              "name" : "Directory",
-              "sensitive" : false
-            },
-            "Conflict Resolution Strategy" : {
-              "displayName" : "Conflict Resolution Strategy",
-              "identifiesControllerService" : false,
-              "name" : "Conflict Resolution Strategy",
-              "sensitive" : false
-            }
-          },
-          "runDurationMillis" : 0,
-          "scheduledState" : "ENABLED",
-          "schedulingPeriod" : "0 sec",
-          "schedulingStrategy" : "TIMER_DRIVEN",
-          "style" : { },
-          "type" : "org.apache.nifi.processors.standard.PutFile",
-          "yieldDuration" : "1 sec"
-        }, {
-          "autoTerminatedRelationships" : [ ],
-          "bulletinLevel" : "WARN",
-          "bundle" : {
-            "artifact" : "nifi-standard-nar",
-            "group" : "org.apache.nifi",
-            "version" : "1.11.3"
-          },
-          "comments" : "",
-          "componentType" : "PROCESSOR",
-          "concurrentlySchedulableTaskCount" : 1,
-          "executionNode" : "ALL",
-          "groupIdentifier" : "392a7c98-98e8-3b72-8c13-10c4ec280279",
-          "identifier" : "374c9a21-503f-3709-bd8e-d840b9f4fcad",
-          "name" : "Passed",
-          "penaltyDuration" : "30 sec",
-          "position" : {
-            "x" : -6808.0,
-            "y" : 1064.0
           },
           "properties" : {
             "Create Missing Directories" : "true",
