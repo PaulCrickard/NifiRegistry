@@ -1,4 +1,6 @@
 flows:
+  ca5a00de-a89b-44d0-af4c-a03d94cbe666: {ver: 1, file: InsertStaging.snapshot, comments: first,
+    author: anonymous, created: 1591578809720, flowName: InsertStaging, flowDesc: ''}
   a608a6cd-4dd9-4872-8529-ad8c758d53b2: {ver: 3, file: DEV.snapshot, comments: version
       3, author: anonymous, created: 1590962212404, flowName: DEV, flowDesc: development
       pipeline}
