@@ -1,6 +1,6 @@
 flows:
-  b16ebd61-0dc8-4124-af9d-f03eecb933b3: {ver: 3, file: warehouse.snapshot, comments: '3',
-    author: anonymous, created: 1591583345305, flowName: warehouse, flowDesc: the
+  b16ebd61-0dc8-4124-af9d-f03eecb933b3: {ver: 4, file: warehouse.snapshot, comments: '',
+    author: anonymous, created: 1591584814155, flowName: warehouse, flowDesc: the
       final processor}
   1f5856e3-ce6d-4e1d-a9a4-5a1a96f7502c: {ver: 2, file: ReadDataLake.snapshot, comments: '2',
     author: anonymous, created: 1591583653024, flowName: ReadDataLake, flowDesc: data

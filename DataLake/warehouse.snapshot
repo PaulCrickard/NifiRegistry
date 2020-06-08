@@ -250,7 +250,7 @@
           "properties" : {
             "dbcp-min-idle-conns" : "0",
             "Max Wait Time" : "500 millis",
-            "Database Driver Class Name" : "org.postgres.Driver",
+            "Database Driver Class Name" : "org.postgresql.Driver",
             "dbcp-min-evictable-idle-time" : "30 mins",
             "Max Total Connections" : "8",
             "dbcp-max-conn-lifetime" : "-1",
