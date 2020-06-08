@@ -46,8 +46,8 @@
           "destination" : {
             "comments" : "",
             "groupId" : "af5f7eac-7878-33ac-8d74-6e8ea42730d8",
-            "id" : "20c9121c-f6bb-3fc6-8d53-ea65c03c512a",
-            "name" : "SplitJson",
+            "id" : "513f6858-1fef-3fdf-9bad-cb46eab750d4",
+            "name" : "SplitText",
             "type" : "PROCESSOR"
           },
           "flowFileExpiration" : "0 sec",
@@ -76,25 +76,55 @@
           "destination" : {
             "comments" : "",
             "groupId" : "af5f7eac-7878-33ac-8d74-6e8ea42730d8",
-            "id" : "ced08d71-6ada-3d46-8246-41ed7c163225",
-            "name" : "PutSQL",
+            "id" : "56054dd1-96a2-3a09-8fb3-3ea1aaf92beb",
+            "name" : "EvaluateJsonPath",
             "type" : "PROCESSOR"
           },
           "flowFileExpiration" : "0 sec",
           "groupIdentifier" : "af5f7eac-7878-33ac-8d74-6e8ea42730d8",
-          "identifier" : "b97873d4-4953-3df9-a97c-1bb36b69fa11",
+          "identifier" : "a008222c-8873-3d70-95a7-164399a95128",
           "labelIndex" : 1,
           "loadBalanceCompression" : "DO_NOT_COMPRESS",
           "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
           "name" : "",
           "partitioningAttribute" : "",
           "prioritizers" : [ ],
-          "selectedRelationships" : [ "split" ],
+          "selectedRelationships" : [ "splits" ],
           "source" : {
             "comments" : "",
             "groupId" : "af5f7eac-7878-33ac-8d74-6e8ea42730d8",
-            "id" : "20c9121c-f6bb-3fc6-8d53-ea65c03c512a",
-            "name" : "SplitJson",
+            "id" : "513f6858-1fef-3fdf-9bad-cb46eab750d4",
+            "name" : "SplitText",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 0
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "af5f7eac-7878-33ac-8d74-6e8ea42730d8",
+            "id" : "ced08d71-6ada-3d46-8246-41ed7c163225",
+            "name" : "PutSQL",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "af5f7eac-7878-33ac-8d74-6e8ea42730d8",
+          "identifier" : "41788a22-2905-31d1-b4cb-e41561593f90",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "matched" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "af5f7eac-7878-33ac-8d74-6e8ea42730d8",
+            "id" : "56054dd1-96a2-3a09-8fb3-3ea1aaf92beb",
+            "name" : "EvaluateJsonPath",
             "type" : "PROCESSOR"
           },
           "zIndex" : 0
@@ -392,28 +422,47 @@
           "concurrentlySchedulableTaskCount" : 1,
           "executionNode" : "ALL",
           "groupIdentifier" : "af5f7eac-7878-33ac-8d74-6e8ea42730d8",
-          "identifier" : "20c9121c-f6bb-3fc6-8d53-ea65c03c512a",
-          "name" : "SplitJson",
+          "identifier" : "513f6858-1fef-3fdf-9bad-cb46eab750d4",
+          "name" : "SplitText",
           "penaltyDuration" : "30 sec",
           "position" : {
-            "x" : -6960.0,
-            "y" : 1392.0
+            "x" : -7000.0,
+            "y" : 1368.0
           },
           "properties" : {
-            "Null Value Representation" : "empty string",
-            "JsonPath Expression" : "*"
+            "Remove Trailing Newlines" : "true",
+            "Header Line Count" : "0",
+            "Line Split Count" : "1"
           },
           "propertyDescriptors" : {
-            "Null Value Representation" : {
-              "displayName" : "Null Value Representation",
+            "Remove Trailing Newlines" : {
+              "displayName" : "Remove Trailing Newlines",
               "identifiesControllerService" : false,
-              "name" : "Null Value Representation",
+              "name" : "Remove Trailing Newlines",
               "sensitive" : false
             },
-            "JsonPath Expression" : {
-              "displayName" : "JsonPath Expression",
+            "Maximum Fragment Size" : {
+              "displayName" : "Maximum Fragment Size",
               "identifiesControllerService" : false,
-              "name" : "JsonPath Expression",
+              "name" : "Maximum Fragment Size",
+              "sensitive" : false
+            },
+            "Header Line Marker Characters" : {
+              "displayName" : "Header Line Marker Characters",
+              "identifiesControllerService" : false,
+              "name" : "Header Line Marker Characters",
+              "sensitive" : false
+            },
+            "Header Line Count" : {
+              "displayName" : "Header Line Count",
+              "identifiesControllerService" : false,
+              "name" : "Header Line Count",
+              "sensitive" : false
+            },
+            "Line Split Count" : {
+              "displayName" : "Line Split Count",
+              "identifiesControllerService" : false,
+              "name" : "Line Split Count",
               "sensitive" : false
             }
           },
@@ -422,7 +471,7 @@
           "schedulingPeriod" : "0 sec",
           "schedulingStrategy" : "TIMER_DRIVEN",
           "style" : { },
-          "type" : "org.apache.nifi.processors.standard.SplitJson",
+          "type" : "org.apache.nifi.processors.standard.SplitText",
           "yieldDuration" : "1 sec"
         }, {
           "autoTerminatedRelationships" : [ "success", "failure", "retry" ],
@@ -615,6 +664,114 @@
           "schedulingStrategy" : "TIMER_DRIVEN",
           "style" : { },
           "type" : "org.apache.nifi.processors.standard.ExecuteSQLRecord",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ "failure", "unmatched" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.3"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "af5f7eac-7878-33ac-8d74-6e8ea42730d8",
+          "identifier" : "56054dd1-96a2-3a09-8fb3-3ea1aaf92beb",
+          "name" : "EvaluateJsonPath",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : -6528.0,
+            "y" : 1536.0
+          },
+          "properties" : {
+            "zip" : "$.zip",
+            "Destination" : "flowfile-attribute",
+            "city" : "$.city",
+            "street" : "$.street",
+            "Return Type" : "auto-detect",
+            "name" : "$.name",
+            "Null Value Representation" : "empty string",
+            "state" : "$.state",
+            "userid" : "$.userid",
+            "age" : "$.age",
+            "Path Not Found Behavior" : "ignore"
+          },
+          "propertyDescriptors" : {
+            "zip" : {
+              "displayName" : "zip",
+              "identifiesControllerService" : false,
+              "name" : "zip",
+              "sensitive" : false
+            },
+            "Destination" : {
+              "displayName" : "Destination",
+              "identifiesControllerService" : false,
+              "name" : "Destination",
+              "sensitive" : false
+            },
+            "city" : {
+              "displayName" : "city",
+              "identifiesControllerService" : false,
+              "name" : "city",
+              "sensitive" : false
+            },
+            "street" : {
+              "displayName" : "street",
+              "identifiesControllerService" : false,
+              "name" : "street",
+              "sensitive" : false
+            },
+            "Return Type" : {
+              "displayName" : "Return Type",
+              "identifiesControllerService" : false,
+              "name" : "Return Type",
+              "sensitive" : false
+            },
+            "name" : {
+              "displayName" : "name",
+              "identifiesControllerService" : false,
+              "name" : "name",
+              "sensitive" : false
+            },
+            "Null Value Representation" : {
+              "displayName" : "Null Value Representation",
+              "identifiesControllerService" : false,
+              "name" : "Null Value Representation",
+              "sensitive" : false
+            },
+            "state" : {
+              "displayName" : "state",
+              "identifiesControllerService" : false,
+              "name" : "state",
+              "sensitive" : false
+            },
+            "userid" : {
+              "displayName" : "userid",
+              "identifiesControllerService" : false,
+              "name" : "userid",
+              "sensitive" : false
+            },
+            "age" : {
+              "displayName" : "age",
+              "identifiesControllerService" : false,
+              "name" : "age",
+              "sensitive" : false
+            },
+            "Path Not Found Behavior" : {
+              "displayName" : "Path Not Found Behavior",
+              "identifiesControllerService" : false,
+              "name" : "Path Not Found Behavior",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.EvaluateJsonPath",
           "yieldDuration" : "1 sec"
         } ],
         "remoteProcessGroups" : [ ],
