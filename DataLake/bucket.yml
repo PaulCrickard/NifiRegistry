@@ -8,5 +8,8 @@ flows:
   52b51651-fa06-449e-b4d9-5570948a91c0: {ver: 1, file: queryStaging.snapshot, comments: first,
     author: anonymous, created: 1591579927753, flowName: queryStaging, flowDesc: query
       staging}
+  b1e5d994-3e88-4ae9-8e47-700f2ea18350: {ver: 1, file: valdation.snapshot, comments: first,
+    author: anonymous, created: 1591582828485, flowName: valdation, flowDesc: great
+      expectations}
 layoutVer: 1
 bucketId: 283852ec-43a5-4682-88f1-840cf4106f88
