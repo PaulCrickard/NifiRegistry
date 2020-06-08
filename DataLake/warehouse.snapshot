@@ -46,8 +46,8 @@
           "destination" : {
             "comments" : "",
             "groupId" : "af5f7eac-7878-33ac-8d74-6e8ea42730d8",
-            "id" : "ced08d71-6ada-3d46-8246-41ed7c163225",
-            "name" : "PutSQL",
+            "id" : "20c9121c-f6bb-3fc6-8d53-ea65c03c512a",
+            "name" : "SplitJson",
             "type" : "PROCESSOR"
           },
           "flowFileExpiration" : "0 sec",
@@ -65,6 +65,36 @@
             "groupId" : "af5f7eac-7878-33ac-8d74-6e8ea42730d8",
             "id" : "5d68b677-3353-3edf-af5d-35e812d691f1",
             "name" : "ExecuteSQLRecord",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 0
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "af5f7eac-7878-33ac-8d74-6e8ea42730d8",
+            "id" : "ced08d71-6ada-3d46-8246-41ed7c163225",
+            "name" : "PutSQL",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "af5f7eac-7878-33ac-8d74-6e8ea42730d8",
+          "identifier" : "b97873d4-4953-3df9-a97c-1bb36b69fa11",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "split" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "af5f7eac-7878-33ac-8d74-6e8ea42730d8",
+            "id" : "20c9121c-f6bb-3fc6-8d53-ea65c03c512a",
+            "name" : "SplitJson",
             "type" : "PROCESSOR"
           },
           "zIndex" : 0
@@ -336,8 +366,8 @@
           "identifier" : "49b65a7f-53ee-3929-8b60-10c49a91e874",
           "name" : "FromValidation",
           "position" : {
-            "x" : -6901.240444225436,
-            "y" : 1138.6373488677707
+            "x" : -6896.0,
+            "y" : 1088.0
           },
           "type" : "INPUT_PORT"
         } ],
@@ -350,6 +380,51 @@
         },
         "processGroups" : [ ],
         "processors" : [ {
+          "autoTerminatedRelationships" : [ "original", "failure" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.3"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "af5f7eac-7878-33ac-8d74-6e8ea42730d8",
+          "identifier" : "20c9121c-f6bb-3fc6-8d53-ea65c03c512a",
+          "name" : "SplitJson",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : -6960.0,
+            "y" : 1392.0
+          },
+          "properties" : {
+            "Null Value Representation" : "empty string",
+            "JsonPath Expression" : "*"
+          },
+          "propertyDescriptors" : {
+            "Null Value Representation" : {
+              "displayName" : "Null Value Representation",
+              "identifiesControllerService" : false,
+              "name" : "Null Value Representation",
+              "sensitive" : false
+            },
+            "JsonPath Expression" : {
+              "displayName" : "JsonPath Expression",
+              "identifiesControllerService" : false,
+              "name" : "JsonPath Expression",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.SplitJson",
+          "yieldDuration" : "1 sec"
+        }, {
           "autoTerminatedRelationships" : [ "success", "failure", "retry" ],
           "bulletinLevel" : "WARN",
           "bundle" : {
@@ -366,8 +441,8 @@
           "name" : "PutSQL",
           "penaltyDuration" : "30 sec",
           "position" : {
-            "x" : -6904.0,
-            "y" : 1552.0
+            "x" : -6952.0,
+            "y" : 1616.0
           },
           "properties" : {
             "Support Fragmented Transactions" : "true",
@@ -452,8 +527,8 @@
           "name" : "ExecuteSQLRecord",
           "penaltyDuration" : "30 sec",
           "position" : {
-            "x" : -6896.0,
-            "y" : 1344.0
+            "x" : -6968.0,
+            "y" : 1192.0
           },
           "properties" : {
             "esql-max-rows" : "0",
