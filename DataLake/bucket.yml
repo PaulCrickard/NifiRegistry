@@ -2,9 +2,9 @@ flows:
   b16ebd61-0dc8-4124-af9d-f03eecb933b3: {ver: 3, file: warehouse.snapshot, comments: '3',
     author: anonymous, created: 1591583345305, flowName: warehouse, flowDesc: the
       final processor}
-  1f5856e3-ce6d-4e1d-a9a4-5a1a96f7502c: {ver: 1, file: ReadDataLake.snapshot, comments: first
-      version, author: anonymous, created: 1591572479791, flowName: ReadDataLake,
-    flowDesc: data lake ingest}
+  1f5856e3-ce6d-4e1d-a9a4-5a1a96f7502c: {ver: 2, file: ReadDataLake.snapshot, comments: '2',
+    author: anonymous, created: 1591583653024, flowName: ReadDataLake, flowDesc: data
+      lake ingest}
   7331a542-fce5-4200-a28a-164144132bfa: {ver: 1, file: ScanLake.snapshot, comments: First
       version by the marketing department, author: anonymous, created: 1591572433565,
     flowName: ScanLake, flowDesc: Scan for a name and send Slack message}

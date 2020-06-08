@@ -557,7 +557,7 @@
             "Minimum File Age" : "0 sec",
             "Polling Interval" : "0 sec",
             "Input Directory" : "/home/paulcrickard/datalake",
-            "Batch Size" : "10",
+            "Batch Size" : "1000",
             "Minimum File Size" : "0 B",
             "Ignore Hidden Files" : "true",
             "Recurse Subdirectories" : "false",
