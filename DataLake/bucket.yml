@@ -8,8 +8,8 @@ flows:
   7331a542-fce5-4200-a28a-164144132bfa: {ver: 1, file: ScanLake.snapshot, comments: First
       version by the marketing department, author: anonymous, created: 1591572433565,
     flowName: ScanLake, flowDesc: Scan for a name and send Slack message}
-  52b51651-fa06-449e-b4d9-5570948a91c0: {ver: 1, file: queryStaging.snapshot, comments: first,
-    author: anonymous, created: 1591579927753, flowName: queryStaging, flowDesc: query
+  52b51651-fa06-449e-b4d9-5570948a91c0: {ver: 2, file: queryStaging.snapshot, comments: '',
+    author: anonymous, created: 1591584193638, flowName: queryStaging, flowDesc: query
       staging}
   b1e5d994-3e88-4ae9-8e47-700f2ea18350: {ver: 1, file: valdation.snapshot, comments: first,
     author: anonymous, created: 1591582828485, flowName: valdation, flowDesc: great

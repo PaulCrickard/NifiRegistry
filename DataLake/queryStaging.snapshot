@@ -412,8 +412,8 @@
           "identifier" : "656961db-34b7-3102-a116-49117603afad",
           "name" : "OutputQueryStaging",
           "position" : {
-            "x" : -5576.0,
-            "y" : 1152.0
+            "x" : -5936.0,
+            "y" : 832.0
           },
           "type" : "OUTPUT_PORT"
         } ],
@@ -444,20 +444,13 @@
           },
           "properties" : {
             "Routing Strategy" : "Route to Property name",
-            "lessrecords" : "${recordcount:lt( 16 )}",
-            "allrecords" : "${recordcount:ge( 16 )}"
+            "allrecords" : "${recordcount:ge( 987 )}"
           },
           "propertyDescriptors" : {
             "Routing Strategy" : {
               "displayName" : "Routing Strategy",
               "identifiesControllerService" : false,
               "name" : "Routing Strategy",
-              "sensitive" : false
-            },
-            "lessrecords" : {
-              "displayName" : "lessrecords",
-              "identifiesControllerService" : false,
-              "name" : "lessrecords",
               "sensitive" : false
             },
             "allrecords" : {
