@@ -5,5 +5,8 @@ flows:
   7331a542-fce5-4200-a28a-164144132bfa: {ver: 1, file: ScanLake.snapshot, comments: First
       version by the marketing department, author: anonymous, created: 1591572433565,
     flowName: ScanLake, flowDesc: Scan for a name and send Slack message}
+  52b51651-fa06-449e-b4d9-5570948a91c0: {ver: 1, file: queryStaging.snapshot, comments: first,
+    author: anonymous, created: 1591579927753, flowName: queryStaging, flowDesc: query
+      staging}
 layoutVer: 1
 bucketId: 283852ec-43a5-4682-88f1-840cf4106f88
